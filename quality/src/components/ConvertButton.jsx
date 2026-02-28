@@ -27,9 +27,6 @@ const ConvertButton = () => {
                 "&:active": {
                     transform: "translateX(-50%) scale(0.95)",
                 }
-                // "&:hover": {
-                //     background: '#38BDF8'
-                // }
             }}
         >
             Convert

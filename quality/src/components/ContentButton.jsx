@@ -29,7 +29,7 @@ const ContentButton = ({ accept, label }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#10b9819d",
+        background: "linear-gradient(to right, #06b6d4, #10b981)",
         backdropFilter: "blur(12px)",
         border: "1px solid rgba(52,211,153,0.3)",
         color: "#F8FAFC",
@@ -41,10 +41,6 @@ const ContentButton = ({ accept, label }) => {
           backgroundColor: "#7DD3FC",
           transform: "scale(1.05)",
         },
-        // backgroundColor: '#10B981',
-        // '&:hover': {
-        //   backgroundColor: '#38BDF8'
-        // }
         "&:active": {
           transform: "scale(0.95)",
         }

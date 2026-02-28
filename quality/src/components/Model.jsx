@@ -10,41 +10,30 @@ const Model = ({ type }) => {
     };
 
     return(
-        <Card
-            sx={{ 
-                width: 650, 
-                height: 300, 
-                p: 4,
-                background: "rgba(255,255,255,0.1)",
-                backdropFilter: "blur(20px)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                borderRadius: "34px",
-                boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
-                textAlign: "center",
-                position: "relative",
-                "&:hover": {
-                    boxShadow: "0 30px 60px -12px rgba(0,0,0,0.35)"
-                }
-            }}
-        >
-            <CardContent sx={{ textAlign: "center" }}>
-        
-                <Typography variant="h6" marginTop={-2}>
-                    Choose {type === "image" ? "an Image" : "an Audio"}
-                </Typography>
+        <div className="
+            w-[650px] h-[350px] mx-auto mt-12 md:mt-10
+            bg-white/8 backdrop-blur-2xl
+            border border-white/10 rounded-3xl
+            shadow-2xl shadow-black/25
+            p-10 md:p-12
+            text-center
+            transition-all duration-400 hover:shadow-3xl hover:-translate-y-2
+        ">
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+                Choose {type === "image" ? "an Image" : "an Audio"}
+            </h2>
+            <p className="text-lg md:text-xl text-white/80 mb-10">
+                Upload an { type == "image" ? "an image" : "an audio" } and convert it to high-quality — instantly.
+            </p>
 
-                <Typography fontSize={12} marginTop={2}>
-                    Upload an { type == "image" ? "an image" : "an audio" } and convert it to high-quality
-                </Typography>
-
-                <ContentButton
-                    accept={type === "image" ? "image/*" : "audio/*"}
-                    label={`Upload ${type}`}
-                />
-            </CardContent>
+            <ContentButton
+                accept={type === "image" ? "image/*" : "audio/*"}
+                label={`Upload ${type}`}
+            />
 
             <ConvertButton />
-        </Card>
+        </div>
     )
 }
 

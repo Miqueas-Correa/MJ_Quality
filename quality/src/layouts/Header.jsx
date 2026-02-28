@@ -10,7 +10,14 @@ export default function Header (){
     };
 
     return (
-        <AppBar sx={{background: '#F8FAFC', padding: 0}}>
+        <AppBar sx={{ padding: 0,
+            background: `
+            radial-gradient(circle at 20% 30%, rgba(0, 191, 255, 0.35), transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.35), transparent 40%),
+            radial-gradient(circle at 60% 80%, rgba(0, 102, 255, 0.35), transparent 45%),
+            linear-gradient(135deg, #0A2540 0%, #111827 100%)
+            `,
+        }}>
             <Toolbar>
                 {/* Logo */}
                 <Button onClick={handleLogoClick}>
@@ -19,48 +26,52 @@ export default function Header (){
 
                 {/* Navbar items */}
                 <Box sx={{ display: 'flex', gap: 2, marginLeft: 'auto' }}>
-                    <Button onClick={() => navigate('/')} color="inherit" sx={{ color: '#111827',
+                    <Button onClick={() => {
+                            navigate('/');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }} 
+                        color="inherit" sx={{ color: '#F8FAFC',
                         borderRadius: 2,
                         textTransform: 'none',
                         '&:hover': {
-                            backgroundColor: '#7DD3FC', // fondo en hover
-                            color: '#F8FAFC',           // opcional: cambiar color del texto
+                            textDecoration: 'underline',
+                            textUnderlineOffset: '4px',
                         },
                     }}>
-                        Inicio
+                        Home
                     </Button>
 
-                    <Button onClick={() => navigate('/servicios')} color="inherit" sx={{ color: '#111827',
+                    <Button onClick={() => navigate('/servicios')} color="inherit" sx={{ color: '#F8FAFC',
                         borderRadius: 2,
                         textTransform: 'none',
                         '&:hover': {
-                            backgroundColor: '#7DD3FC', // fondo en hover
-                            color: '#F8FAFC',           // opcional: cambiar color del texto
+                            textDecoration: 'underline',
+                            textUnderlineOffset: '4px',
                         },
                     }}>
-                        Servicios
+                        Servicies
                     </Button>
 
-                    <Button onClick={() => navigate('/sobre-nosotros')} color="inherit" sx={{ color: '#111827',
+                    <Button onClick={() => navigate('/sobre-nosotros')} color="inherit" sx={{ color: '#F8FAFC',
                         borderRadius: 2,
                         textTransform: 'none',
                         '&:hover': {
-                            backgroundColor: '#7DD3FC', // fondo en hover
-                            color: '#F8FAFC',           // opcional: cambiar color del texto
+                            textDecoration: 'underline',
+                            textUnderlineOffset: '4px',
                         },
                     }}>
-                        Sobre Nosotros
+                        About us
                     </Button>
 
-                    <Button onClick={() => navigate('/contacto')} sx={{ color: '#111827',
+                    <Button onClick={() => navigate('/contacto')} sx={{ color: '#F8FAFC',
                         borderRadius: 2,
                         textTransform: 'none',
                         '&:hover': {
-                            backgroundColor: '#7DD3FC', // fondo en hover
-                            color: '#F8FAFC',           // opcional: cambiar color del texto
+                            textDecoration: 'underline',
+                            textUnderlineOffset: '4px',
                         },
                     }}>
-                        Contacto
+                        Contact
                     </Button>
                 </Box>
   

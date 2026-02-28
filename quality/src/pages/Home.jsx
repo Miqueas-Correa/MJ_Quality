@@ -1,16 +1,14 @@
 import Footer from "../layouts/Footer";
 import Header from "../layouts/Header";
 import MainLayout from "../layouts/MainLayout";
+import HeroSection from "../layouts/HeroSection";
 
 function Home() {
   return (
     <section className="min-h-[100dvh] flex flex-col">
       <Header />
-
-      <div className="flex-grow flex items-center justify-center">
-        <MainLayout />
-      </div>
-
+      <HeroSection />
+      <MainLayout />
       <Footer />
     </section>
   );

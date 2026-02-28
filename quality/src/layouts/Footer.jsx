@@ -2,15 +2,18 @@ import { Typography, Box } from '@mui/material';
 
 const Footer = () => {
     return (
-        <section id='footer' className='min-w-screen p-0'>
-            <Box color="#0A2540" py={2} textAlign="center">
-                <Typography variant="body2"
-                    sx={{ textAlign:'center', fontSize: "12px", fontFamily: 'Inter, sans-serif', color: '#111827' }}
-                >
-                    © 2026 Quality - Todos los derechos reservados
-                </Typography>
-            </Box>
-        </section>
+        <footer>
+            <div className="max-w-4xl mx-auto px-6">
+                
+                <p className="text-sm p-0.5">
+                    © 2026 Quality - All rights reserved
+                </p>
+
+                {/* Opcional: redes sociales */}
+                    
+            </div>
+
+        </footer>
     );
 }
 
