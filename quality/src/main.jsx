@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom';
+// global style
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from './styles/theme.js';
+import './index.css'
+import App from './App.jsx'
 
-const container = document.getElementById("root");
-
-if (!container) {
-  throw new Error("No se encontró el elemento con id 'root'");
-}
-
-ReactDOM.createRoot(container).render(
-  <React.StrictMode>
+createRoot(document.getElementById('root')).render(
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
     <BrowserRouter>
-      <App />
+      <StrictMode>
+        <App />
+      </StrictMode>
     </BrowserRouter>
-  </React.StrictMode>
-);
+  </ThemeProvider>
+)
