@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Model from '../components/Model';
+// Llamada al custom hook para manejar la subida de archivos y la respuesta del backend
+import useUpgrade from '../hooks/useUpgrade';
 
 const MainLayout = () => {
     const [type, setType] = useState("image");
@@ -7,6 +9,20 @@ const MainLayout = () => {
     const toggleType = () => {
         setType(prev => prev === "image" ? "audio" : "image");
     };
+
+    // const { loading, error, result } = useUpgrade(file, type);
+
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // if (error) {
+    //     return <div>Error: {error?.message}</div>;
+    // }
+
+    // if (result) {
+    //     return <div>Result: {result}</div>;
+    // }
 
     return(
         <section id="main" className="min-h-screen w-full">
