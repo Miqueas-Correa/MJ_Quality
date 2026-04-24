@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import Model from '../components/Model';
+// Llamada al custom hook para manejar la subida de archivos y la respuesta del backend
+import useUpgrade from '../hooks/useUpgrade';
+// Componente para mostrar anuncios de Google AdSense
+import AdBanner from '../components/AdBanner';
 
 const MainLayout = () => {
     const [type, setType] = useState("image");
@@ -8,8 +12,25 @@ const MainLayout = () => {
         setType(prev => prev === "image" ? "audio" : "image");
     };
 
+    // const { loading, error, result } = useUpgrade(file, type);
+
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // if (error) {
+    //     return <div>Error: {error?.message}</div>;
+    // }
+
+    // if (result) {
+    //     return <div>Result: {result}</div>;
+    // }
+
     return(
         <section id="main" className="min-h-screen w-full">
+
+            {/* Ad Banner */}
+            <AdBanner />
 
             <button onClick={toggleType} 
             className="self-start mt-32 w-[250px]
@@ -22,6 +43,9 @@ const MainLayout = () => {
             </button>
 
             <Model type={type} />
+
+            {/* Ad Banner */}
+            <AdBanner />
 
         </section>
     );
