@@ -1,15 +1,13 @@
 import Footer from "../layouts/Footer";
 import Header from "../layouts/Header";
-import MainLayout from "../layouts/MainLayout";
+import ButtonConversion from "../components/ButtonConversion";
 import HeroSection from "../layouts/HeroSection";
 
 function Home() {
   return (
-    <section className="min-h-[100dvh] flex flex-col">
-      <Header />
+    <section className="min-h-dvh flex flex-col">
       <HeroSection />
-      <MainLayout />
-      <Footer />
+      <ButtonConversion />
     </section>
   );
 }

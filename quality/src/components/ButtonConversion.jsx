@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Model from '../components/Model';
+import Model from './FileConversion';
 // Llamada al custom hook para manejar la subida de archivos y la respuesta del backend
 import useUpgrade from '../hooks/useUpgrade';
 // Componente para mostrar anuncios de Google AdSense
-import AdBanner from '../components/AdBanner';
+import AdBanner from './AdBanner';
 
-const MainLayout = () => {
+const ButtonConversion = () => {
     const [type, setType] = useState("image");
 
     const toggleType = () => {
@@ -27,13 +27,13 @@ const MainLayout = () => {
     // }
 
     return(
-        <section id="main" className="min-h-screen w-full">
+        <section id="main" className="min-h-screen w-full flex flex-col items-center justify-start gap-10 py-10">
 
             {/* Ad Banner */}
             <AdBanner />
 
             <button onClick={toggleType} 
-            className="self-start mt-32 w-[250px]
+            className="self-center mt-10 w-62.5
                 px-2 py-2.5 text-sm font-medium
                 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full
                 text-white/90 hover:text-white hover:bg-white/15 hover:scale-105
@@ -51,4 +51,4 @@ const MainLayout = () => {
     );
 }
 
-export default MainLayout;
+export default ButtonConversion;
