@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# MJ Quality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una plataforma web integral dedicada al control y aseguramiento de la calidad, diseñada para optimizar procesos y garantizar estándares de excelencia en cada proyecto.
 
-Currently, two official plugins are available:
+## 🚀 Lanzamiento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Fecha de lanzamiento:** Abril 2026  
+**Versión:** 1.0.0  
+**Estado:** Producción
 
-## React Compiler
+## 🌐 Enlaces de Acceso
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Aplicación Web (Frontend):** [https://mj-quality-tje5.vercel.app/](https://mj-quality-tje5.vercel.app/)  
+- **API de Servicios (Backend):** [https://api-quality.onrender.com](https://api-quality.onrender.com)
 
-## Expanding the ESLint configuration
+## 📋 Descripción
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+MJ Quality es una solución completa para la gestión de calidad que conecta frontend y backend mediante una arquitectura moderna y escalable. La plataforma permite a los usuarios gestionar, monitorear y validar procesos de calidad de manera eficiente, ofreciendo una interfaz intuitiva y un respaldo de servicios robusto.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚙️ ¿Cómo Funciona?
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Arquitectura
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Frontend:** Construido con React, TypeScript y Vite para un rendimiento óptimo y desarrollo ágil.
+- **Backend:** API RESTful alojada en Render, encargada de la lógica de negocio y persistencia de datos.
+- **Comunicación:** El frontend consume los servicios expuestos por la API mediante peticiones HTTP asíncronas.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Flujo de Trabajo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. El usuario accede a la aplicación web a través del frontend desplegado en Vercel.
+2. La interfaz permite navegar entre módulos: Inicio, Servicios, Acerca de y Contacto.
+3. Cada módulo interactúa con la API para obtener, crear o actualizar información según sea necesario.
+4. La API procesa las peticiones, aplica validaciones y reglas de negocio, y retorna respuestas estructuradas.
+5. El frontend renderiza los resultados en tiempo real, ofreciendo una experiencia fluida y responsiva.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Cómo Levantar el Proyecto Localmente
+
+### Requisitos Previos
+
+- Node.js (versión recomendada: 18+)
+- npm o yarn
+- Git
+
+### Pasos para Levantar el Frontend
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://mikim@github.com/MJ-Quality/quality.git
+   cd quality
+   ```
+
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Configurar variables de entorno (si aplica):
+   - Crear un archivo `.env` en la raíz del proyecto con las variables necesarias para conectar con la API.
+
+4. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+5. Abrir el navegador en la dirección indicada (por defecto: `http://localhost:5173`).
+
+### Levantar la API Localmente (Opcional)
+
+Si deseas ejecutar la API en tu entorno local, consulta el repositorio correspondiente del backend y sigue sus instrucciones de despliegue. La API actualmente en producción está disponible en:  
+[https://api-quality.onrender.com](https://api-quality.onrender.com)
+
+## 📖 Páginas Disponibles
+
+- **Home:** Vista principal con resumen y accesos rápidos.
+- **Services:** Catálogo de servicios de calidad ofrecidos.
+- **About Us:** Información sobre el proyecto y el equipo.
+- **Contact:** Formulario y canales de comunicación.
+
+## 🧑‍💻 Desarrollado por
+
+- **Brenda Yañes**  
+  [Portafolio](https://tu-portafolio-brenda.com) *(enlace a portafolio)*
+
+- **Miqueas Correa**  
+  [Portafolio](https://tu-portafolio-miqueas.com) *(enlace a portafolio)*
+
+## ©️ Derechos Reservados
+
+Todos los derechos reservados © 2026 MJ Quality.  
+Prohibida la reproducción total o parcial sin autorización por escrito de los autores.
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
