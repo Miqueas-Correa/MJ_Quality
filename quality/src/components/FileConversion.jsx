@@ -30,7 +30,7 @@ const Model = ({ type }) => {
 
     return (
         <div className="
-            w-[650px] min-h-[350px] mx-auto mt-12 md:mt-10
+            w-162.5 min-h-87.5 mx-auto mt-12 md:mt-10
             bg-white/8 backdrop-blur-2xl
             border border-white/10 rounded-3xl
             shadow-2xl shadow-black/25
