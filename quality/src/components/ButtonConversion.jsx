@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Model from './FileConversion';
+import FileConversion from './FileConversion';
 // Llamada al custom hook para manejar la subida de archivos y la respuesta del backend
 import useUpgrade from '../hooks/useUpgrade';
 // Componente para mostrar anuncios de Google AdSense
@@ -42,7 +42,7 @@ const ButtonConversion = () => {
                 Change to {type === "image" ? "audio" : "image"}
             </button>
 
-            <Model type={type} />
+            <FileConversion type={type} />
 
             {/* Ad Banner */}
             <AdBanner />

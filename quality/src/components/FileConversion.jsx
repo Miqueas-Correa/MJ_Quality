@@ -3,7 +3,7 @@ import ContentButton from './ContentButton';
 import ConvertButton from './ConvertButton';
 import useUpgrade from '../hooks/useUpgrade';
 
-const Model = ({ type }) => {
+const FileConversion = ({ type }) => {
     const [file, setFile] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
@@ -23,7 +23,8 @@ const Model = ({ type }) => {
         const a = document.createElement('a');
         a.href = url;
         const originalExt = file.name.split('.').pop();
-        a.download = `${file.name.split('.')[0]}_Quality.${originalExt}`;
+        const outExt = originalExt === 'jfif' ? 'jpg' : originalExt;
+        a.download = `${file.name.split('.')[0]}_Quality.${outExt}`;
         a.click();
         URL.revokeObjectURL(url);
     };
@@ -94,4 +95,4 @@ const Model = ({ type }) => {
     );
 };
 
-export default Model;
+export default FileConversion;
