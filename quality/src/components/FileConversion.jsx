@@ -19,11 +19,12 @@ const FileConversion = ({ type }) => {
     };
 
     const handleDownload = () => {
-        const url = URL.createObjectURL(new Blob([result]));
-        const a = document.createElement('a');
-        a.href = url;
         const originalExt = file.name.split('.').pop();
         const outExt = originalExt === 'jfif' ? 'jpg' : originalExt;
+        const mimeType = type === 'image' ? `image/${outExt === 'jpg' ? 'jpeg' : outExt}` : 'audio/wav';
+        const url = URL.createObjectURL(new Blob([result], { type: mimeType }));
+        const a = document.createElement('a');
+        a.href = url;
         a.download = `${file.name.split('.')[0]}_Quality.${outExt}`;
         a.click();
         URL.revokeObjectURL(url);
