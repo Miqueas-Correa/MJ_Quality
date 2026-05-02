@@ -19,10 +19,9 @@ const FileConversion = ({ type }) => {
     };
 
     const handleDownload = () => {
-        console.log('result type:', typeof result);
-        console.log('result:', result);
-        console.log('result byteLength:', result?.byteLength);
-        
+        // console.log('result type:', typeof result);
+        // console.log('result:', result);
+        // console.log('result byteLength:', result?.byteLength);
         const originalExt = file.name.split('.').pop();
         const outExt = originalExt === 'jfif' ? 'jpg' : originalExt;
         const mimeType = type === 'image' ? `image/${outExt === 'jpg' ? 'jpeg' : outExt}` : 'audio/wav';
