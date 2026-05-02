@@ -17,6 +17,7 @@ export default function useUpgrade(file, extraRoute = "") {
             formData.append('file', file);
 
             api.post(`/${extraRoute}`, formData, {
+                responseType: 'arraybuffer',
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
